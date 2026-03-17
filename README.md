@@ -46,9 +46,26 @@ todo-app/
 
 │ └── index.html
 
-
+---
+## ports 
+- postgress 5432
+- app 5000
 ---
 
+# ⚙️ Environment Variables
+
+These are defined in docker-compose.yml:
+
+Variable	Value
+
+DATABASE_URL	postgresql://todo_user:todo_pass@db:5432/todo_db
+---
+# requirements.txt
+- Flask==2.3.3
+- Flask-SQLAlchemy==3.0.5
+- python-dotenv==1.0.0
+- psycopg2-binary==2.9.9
+---
 ## ⚙️ Setup & Run (Step-by-Step)
 
 ### 1️⃣ Clone Repository
@@ -78,16 +95,27 @@ Open browser:
 
 http://localhost:5000
 ![alt text](todo.png)
+
 🔗 API Endpoints
+
 Get Todos
+
 GET /todos
+
 Add Todo
+
 POST /todos
+
 Update Todo
+
 PUT /todos/<id>
+
 Delete Todo
+
 DELETE /todos/<id>
+
 🐳 Docker Commands (Quick Reference)
+
 # Build & start
 docker compose up --build
 
